@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+ background-color: bisque;
+}
+
+main {
+    padding: 100px 0;
+}
+
+header {
+    background-color: white;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.play-button {
+    border-radius: 5px;
+    background-color: brown;
+    min-width: 80px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.cella {
+    width: 10%;
+    border: 2px solid black;
+    aspect-ratio: 1/1;
+    flex-basis: (100% / 10);
+    background-color: #c2183a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-header .row {
+    justify-content: flex-end;
+}
+
+.cella.clicked {
+    background-color: #6495ed;
+    color: black;
+}
