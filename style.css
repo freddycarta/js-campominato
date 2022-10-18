@@ -25,7 +25,7 @@ header {
 
 .play-button {
     border-radius: 5px;
-    background-color: brown;
+    background-color: #187ec2;
     min-width: 80px;
     line-height: 30px;
     text-align: center;
@@ -39,7 +39,7 @@ header {
 
 .cella {
     width: 10%;
-    border: 2px solid black;
+    border: 2px solid bisque;
     aspect-ratio: 1/1;
     flex-basis: (100% / 10);
     background-color: #187ec2;
