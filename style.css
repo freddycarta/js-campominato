@@ -42,7 +42,7 @@ header {
     border: 2px solid black;
     aspect-ratio: 1/1;
     flex-basis: (100% / 10);
-    background-color: #c2183a;
+    background-color: #c28718;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,3 +67,5 @@ header {
     background-color:red;
     color: black;
 }
+
+
