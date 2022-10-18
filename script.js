@@ -2,7 +2,7 @@ console.log('hi');
 
 const playButtonEl = document.querySelector('.play-button')
 const gridElement = document.querySelector('.grid')
-const difficoltaSelectEl = document.querySelector('select[name="Difficolta"]')
+const difficoltaSelectEl = document.querySelector('select[name="difficolta"]')
 
 playButtonEl.addEventListener('click',creaGriglia)
 
@@ -18,7 +18,7 @@ function creaGriglia() {
     // recupero difficolta
     const difficoltaSelezionata = difficoltaSelectEl.value;
     console.log(difficoltaSelectEl)
-    posizionibombe = generaBombe(16)
+    // posizionibombe = generaBombe(16)
     //ciclare 100 volte per creare 100 celle con numeri
     for (let i = 0; i < 100; i++) {
         // console.log('cella n: ', i + 1)
