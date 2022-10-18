@@ -8,19 +8,17 @@ playButtonEl.addEventListener('click',creaGriglia)
 
 // let posizionibombe = []
 
-
-
 function creaGriglia() {
-    // reset
     resetGame()
     // genero la griglia
     console.log('creo griglia')
     // recupero difficolta
     const difficoltaSelezionata = difficoltaSelectEl.value;
-    console.log(difficoltaSelectEl)
-    // posizionibombe = generaBombe(16)
-    //ciclare 100 volte per creare 100 celle con numeri
-    for (let i = 0; i < 100; i++) {
+    console.log(difficoltaSelezionata)
+
+    let numerocelle = calcolaCelleGriglia(difficoltaSelezionata)
+    //ciclare per creare  n celle con numeri a seconda della difficolt
+    for (let i = 0; i < numerocelle; i++) {
         // console.log('cella n: ', i + 1)
         const cella = creaCella()
         cella.innerHTML = i+1
@@ -57,4 +55,16 @@ function onClick() {
 function resetGame() {
     // svuoto la griglia
     gridElement.innerHTML = ''
+}
+
+function calcolaCelleGriglia(difficolta) {
+    let numerocelle = 100
+
+    if(difficoltaSelezionata === 'medio') {
+        numerocelle = 91 
+    } else if (difficoltaSelezionata === 'difficile'){
+        numerocelle = 49
+    }
+
+    return numerocelle
 }
