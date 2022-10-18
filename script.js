@@ -6,7 +6,7 @@ const difficoltaSelectEl = document.querySelector('select[name="difficolta"]')
 
 playButtonEl.addEventListener('click',creaGriglia)
 
-// let posizionibombe = []
+let posizionibombe = []
 
 function creaGriglia() {
     resetGame()
@@ -21,19 +21,20 @@ function creaGriglia() {
     for (let i = 0; i < numerocelle; i++) {
         // console.log('cella n: ', i + 1)
         const cella = creaCella()
+        cella.style.flexBasis = `${100 / dimensione}%`
         cella.innerHTML = i+1
         gridElement.append(cella)
     }
 
 }
 
-// function generaBombe(max) {
-//     // creo array di 16 bombe
-//     const bombe = []
-//     // ciclo bombe
+function generaBombe(max) {
+    // creo array di 16 bombe
+    const bombe = []
+    // ciclo bombe
 
-//     return bombe
-// }
+    return bombe
+}
 
 
 function creaCella() {
