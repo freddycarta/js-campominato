@@ -57,7 +57,7 @@ function resetGame() {
     gridElement.innerHTML = ''
 }
 
-function calcolaCelleGriglia(difficolta) {
+function calcolaCelleGriglia(difficoltaSelezionata) {
     let numerocelle = 100
 
     if(difficoltaSelezionata === 'medio') {
