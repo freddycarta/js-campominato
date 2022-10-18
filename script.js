@@ -67,13 +67,18 @@ function creaCella() {
 }
 
 function onClick() {
-    console.log(this)
+    // console.log(this)
     this.classList.toggle('clicked')
     const numerocella = parseInt (this.innerHTML)
-    console.log (numerocella)
-    console.log(posizionibombe.includes(numerocella))
+    // console.log (numerocella)
+    // console.log(posizionibombe.includes(numerocella))
+    let className = 'success'
+    if (posizionibombe.includes(numerocella)) {
+        className = 'bomb'
 
+    }
 }
+
 
 function resetGame() {
     // svuoto la griglia

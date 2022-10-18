@@ -58,7 +58,12 @@ header {
     justify-content: flex-end;
 }
 
-.cella.clicked {
+.cella.succes {
     background-color: #6495ed;
+    color: white;
+}
+
+.cella.bomb {
+    background-color:red;
     color: black;
 }
