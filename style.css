@@ -42,11 +42,12 @@ header {
     border: 2px solid black;
     aspect-ratio: 1/1;
     flex-basis: (100% / 10);
-    background-color: #c28718;
+    background-color: #187ec2;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .row {
@@ -59,8 +60,8 @@ header {
 }
 
 .cella.succes {
-    background-color: #6495ed;
-    color: white;
+    background-color: #88ed64;
+    color: black;
 }
 
 .cella.bomb {

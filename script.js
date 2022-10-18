@@ -68,7 +68,7 @@ function creaCella() {
 
 function onClick() {
     // // console.log(this)
-    this.classList.toggle('clicked') 
+    // this.classList.toggle('clicked') 
     const numerocella = parseInt (this.innerHTML)
     // console.log (numerocella)
     // console.log(posizionibombe.includes(numerocella))
