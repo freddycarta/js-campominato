@@ -18,6 +18,7 @@ function startGame() {
 
     let dimensione  = calcoloDimensioneGriglia(difficoltaSelezionata)
     posizionibombe = generaBombe(dimensione ** 2)
+    console.log(posizionibombe)
     //ciclare per creare  n celle con numeri a seconda della difficolt
     creaGriglia(dimensione)
 
@@ -39,6 +40,17 @@ function generaBombe(max) {
     // creo array di 16 bombe
     const bombe = []
     // ciclo bombe
+    while (bombe.length < 16) {
+        // geneero num da 1 a max
+        // se num non è nell'array
+        const n = getRandomIntInclusive(1,max)
+
+        if(!bombe.includes(n)) {
+            bombe.push(n)
+        }
+        // allora pusho 
+         
+    }
 
     return bombe
 }
@@ -56,7 +68,10 @@ function creaCella() {
 
 function onClick() {
     console.log(this)
-    this.classList.add('clicked')
+    this.classList.toggle('clicked')
+    const numerocella = parseInt (this.innerHTML)
+    console.log (numerocella)
+    console.log(posizionibombe.includes(numerocella))
 
 }
 
@@ -76,3 +91,9 @@ function calcoloDimensioneGriglia(difficolta) {
 
     return dimensione
 }
+
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+  }
