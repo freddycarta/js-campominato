@@ -59,7 +59,7 @@ header {
     justify-content: flex-end;
 }
 
-.cella.succes {
+.cella.success {
     background-color: #88ed64;
     color: black;
 }

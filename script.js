@@ -76,7 +76,7 @@ function onClick() {
     if (posizionibombe.includes(numerocella)) {
         className = 'bomb'
 
-    }
+    } 
 
     this.classList.add(className)
 }
