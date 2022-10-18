@@ -4,28 +4,35 @@ const playButtonEl = document.querySelector('.play-button')
 const gridElement = document.querySelector('.grid')
 const difficoltaSelectEl = document.querySelector('select[name="difficolta"]')
 
-playButtonEl.addEventListener('click',creaGriglia)
+playButtonEl.addEventListener('click', startGame)
 
 let posizionibombe = []
 
-function creaGriglia() {
+function startGame() {
     resetGame()
     // genero la griglia
     console.log('creo griglia')
     // recupero difficolta
     const difficoltaSelezionata = difficoltaSelectEl.value;
-    console.log(difficoltaSelezionata)
+    // console.log(difficoltaSelezionata)
 
-    let numerocelle = calcolaCelleGriglia(difficoltaSelezionata)
+    let dimensione  = calcoloDimensioneGriglia(difficoltaSelezionata)
+    posizionibombe = generaBombe(dimensione ** 2)
     //ciclare per creare  n celle con numeri a seconda della difficolt
+    creaGriglia(dimensione)
+
+}
+
+function creaGriglia (dimensioneGriglia)  {
+
+    const numerocelle = dimensioneGriglia**2
+
     for (let i = 0; i < numerocelle; i++) {
-        // console.log('cella n: ', i + 1)
         const cella = creaCella()
-        cella.style.flexBasis = `${100 / dimensione}%`
-        cella.innerHTML = i+1
+        cella.style.flexBasis = `${100 / dimensioneGriglia}%`
+        cella.innerHTML = i + 1
         gridElement.append(cella)
     }
-
 }
 
 function generaBombe(max) {
@@ -58,14 +65,14 @@ function resetGame() {
     gridElement.innerHTML = ''
 }
 
-function calcolaCelleGriglia(difficoltaSelezionata) {
-    let numerocelle = 100
+function calcoloDimensioneGriglia(difficolta) {
+    let dimensione = 10
 
-    if(difficoltaSelezionata === 'medio') {
-        numerocelle = 91 
-    } else if (difficoltaSelezionata === 'difficile'){
-        numerocelle = 49
+    if(difficolta === 'medio') {
+        dimensione = 9 
+    } else if (difficolta === 'difficile'){
+        dimensione = 7
     }
 
-    return numerocelle
+    return dimensione
 }
