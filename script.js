@@ -4,9 +4,12 @@ const playButtonEl = document.querySelector('.play-button')
 const gridElement = document.querySelector('.grid')
 const difficoltaSelectEl = document.querySelector('select[name="difficolta"]')
 
+console.dir(gridElement)
+
 playButtonEl.addEventListener('click', startGame)
 
 let posizionibombe = []
+let punteggio = []
 
 function startGame() {
     resetGame()
@@ -31,7 +34,7 @@ function creaGriglia (dimensioneGriglia)  {
     for (let i = 0; i < numerocelle; i++) {
         const cella = creaCella()
         cella.style.flexBasis = `${100 / dimensioneGriglia}%`
-        cella.innerHTML = i + 1
+        cella.dataset.numero = i + 1
         gridElement.append(cella)
     }
 }
@@ -67,16 +70,20 @@ function creaCella() {
 }
 
 function onClick() {
-    // // console.log(this)
-    // this.classList.toggle('clicked') 
-    const numerocella = parseInt (this.innerHTML)
+    console.log(this.dataset)
+    const numerocella = parseInt (this.dataset.numero)
     // console.log (numerocella)
     // console.log(posizionibombe.includes(numerocella))
     let className = 'success'
     if (posizionibombe.includes(numerocella)) {
         className = 'bomb'
 
-    } 
+    } else {
+        // incremento punteggio
+        punteggio++
+        console.log(punteggio)
+    }
+
 
     this.classList.add(className)
 }
@@ -85,7 +92,14 @@ function onClick() {
 function resetGame() {
     // svuoto la griglia
     gridElement.innerHTML = ''
+    // resetto punteggio
+    punteggio = 0
 }
+
+function gameOver() {
+    document.body.innerHTML += `Hai totalizzato ${punteggio} punti`
+}
+
 
 function calcoloDimensioneGriglia(difficolta) {
     let dimensione = 10
