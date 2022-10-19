@@ -77,6 +77,7 @@ function onClick() {
     let className = 'success'
     if (posizionibombe.includes(numerocella)) {
         className = 'bomb'
+        gameOver()
 
     } else {
         // incremento punteggio
