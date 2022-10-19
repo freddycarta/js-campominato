@@ -3,6 +3,7 @@ console.log('hi');
 const playButtonEl = document.querySelector('.play-button')
 const gridElement = document.querySelector('.grid')
 const difficoltaSelectEl = document.querySelector('select[name="difficolta"]')
+const resultMessage = document.querySelector('.message')
 
 console.dir(gridElement)
 
@@ -85,7 +86,7 @@ function onClick() {
         console.log(punteggio)
     }
 
-
+    
     this.classList.add(className)
 }
 
@@ -98,7 +99,7 @@ function resetGame() {
 }
 
 function gameOver() {
-    document.body.innerHTML += `Hai totalizzato ${punteggio} punti`
+    resultMessage.innerHTML =  `Hai totalizzato ${punteggio} punti`
 }
 
 
