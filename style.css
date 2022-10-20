@@ -38,7 +38,7 @@ header {
 }
 
 .cella {
-    width: 10%;
+    
     border: 2px solid bisque;
     aspect-ratio: 1/1;
     flex-basis: (100% / 10);
